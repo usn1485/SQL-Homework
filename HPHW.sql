@@ -52,3 +52,14 @@ GROUP BY last_name
 ORDER BY  "Last Name count" DESC;
 
 
+---Bonus Query
+--Create a bar chart of average salary by title.
+-- 
+CREATE VIEW avg_salaryByEmp_title AS
+Select round(avg(s.salary),2) as "avg salary", t.title from salaries as s
+Inner JOIN titles as t ON s.emp_no=t.emp_no
+GROUP BY  t.title ;
+
+select * from avg_salarybyemp_title;
+
+
